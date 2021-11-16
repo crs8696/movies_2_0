@@ -12,6 +12,8 @@ class MovieResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :director
+
   has_many   :bookmarks,
              foreign_key: :user_bookmarks
 
