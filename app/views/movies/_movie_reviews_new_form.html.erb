@@ -1,0 +1,62 @@
+<!-- Form review start -->
+<%= form_with(model: @review, local: true) do |f| %>
+<!-- Form review end -->
+
+  <!-- Label and input for movie_id start -->
+  <!-- Input for movie_id start -->
+  <%= f.hidden_field :movie_id, value: @movie.id %>
+  <!-- Input for movie_id end -->
+  <!-- Label and input for movie_id end -->
+
+  <!-- Label and input for director_id start -->
+  <div class="form-group">
+    <%= f.label :director_id %>
+
+    <!-- Input for director_id start -->
+    <%= f.text_field :director_id, class: "form-control" %>
+    <!-- Input for director_id end -->
+  </div>
+  <!-- Label and input for director_id end -->
+
+  <!-- Label and input for year start -->
+  <div class="form-group">
+    <%= f.label :year %>
+
+    <!-- Input for year start -->
+    <%= f.text_field :year, class: "form-control" %>
+    <!-- Input for year end -->
+  </div>
+  <!-- Label and input for year end -->
+
+  <!-- Label and input for duration start -->
+  <div class="form-group">
+    <%= f.label :duration %>
+
+    <!-- Input for duration start -->
+    <%= f.text_field :duration, class: "form-control" %>
+    <!-- Input for duration end -->
+  </div>
+  <!-- Label and input for duration end -->
+
+  <!-- Label and input for review_content start -->
+  <div class="form-group">
+    <%= f.label :review_content %>
+
+    <!-- Input for review_content start -->
+    <%= f.text_field :review_content, class: "form-control" %>
+    <!-- Input for review_content end -->
+  </div>
+  <!-- Label and input for review_content end -->
+
+  <!-- Label and input for cast start -->
+  <div class="form-group">
+    <%= f.label :cast %>
+
+    <!-- Input for cast start -->
+    <%= f.text_field :cast, class: "form-control" %>
+    <!-- Input for cast end -->
+  </div>
+  <!-- Label and input for cast end -->
+
+  <%= f.submit "Create review", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

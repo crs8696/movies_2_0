@@ -1,0 +1,12 @@
+<!-- Form bookmark start -->
+<%= form_with(model: @bookmark, local: true) do |f| %>
+<!-- Form bookmark end -->
+
+  <!-- Label and input for user_bookmarks start -->
+  <!-- Input for user_bookmarks start -->
+  <%= f.hidden_field :user_bookmarks, value: @movie.id %>
+  <!-- Input for user_bookmarks end -->
+  <!-- Label and input for user_bookmarks end -->
+
+  <%= f.submit "Create bookmark", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
