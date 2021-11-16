@@ -7,7 +7,11 @@
     <dl class="mb-1">
       <dt>User bookmarks</dt>
       <!-- Display user_bookmarks start -->
-      <dd><%= bookmark.user_bookmarks %></dd>
+      <dd>
+        <% if @bookmark.bookmarker.present? %>
+          <%= link_to bookmark.bookmarker, bookmark.bookmarker %>
+        <% end %>
+      </dd>
       <!-- Display user_bookmarks end -->
 
     </dl>
