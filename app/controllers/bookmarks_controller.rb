@@ -3,7 +3,8 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks
   def index
-    @bookmarks = Bookmark.page(params[:page]).per(10)
+    @q = Bookmark.ransack(params[:q])
+    @bookmarks = @q.result(:distinct => true).includes(:bookmarker, :user_bookmark, :cast_of_actor, :director).page(params[:page]).per(10)
   end
 
   # GET /bookmarks/1
