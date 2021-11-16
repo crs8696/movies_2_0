@@ -43,7 +43,7 @@
     <%= f.label :review_content %>
 
     <!-- Input for review_content start -->
-    <%= f.text_field :review_content, class: "form-control" %>
+    <%= f.collection_select :review_content, User.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for review_content end -->
   </div>
   <!-- Label and input for review_content end -->

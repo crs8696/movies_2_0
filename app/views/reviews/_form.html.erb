@@ -120,7 +120,7 @@
 
     <%= f.label :review_content %>
     <!-- Input for review_content start -->
-    <%= f.number_field :review_content, class: review_content_class, placeholder: "Enter review content" %>
+    <%= f.collection_select :review_content, User.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for review_content end -->
     <% if review_content_was_invalid %>
       <% review.errors.full_messages_for(:review_content).each do |message| %>
