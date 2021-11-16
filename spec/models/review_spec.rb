@@ -12,6 +12,8 @@ RSpec.describe Review, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:cast_of_actor) }
+
     end
 
     describe "Validations" do
