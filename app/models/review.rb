@@ -9,6 +9,10 @@ class Review < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :director,
+             :through => :movie,
+             :source => :director
+
   has_one    :cast_of_actor,
              :through => :movie,
              :source => :cast_of_actors
