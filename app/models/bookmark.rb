@@ -1,6 +1,10 @@
 class Bookmark < ApplicationRecord
   # Direct associations
 
+  belongs_to :bookmarker,
+             :class_name => "Movie",
+             :foreign_key => "user_bookmarks"
+
   # Indirect associations
 
   # Validations

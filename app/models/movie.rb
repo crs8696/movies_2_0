@@ -1,6 +1,10 @@
 class Movie < ApplicationRecord
   # Direct associations
 
+  has_many   :bookmarks,
+             :foreign_key => "user_bookmarks",
+             :dependent => :destroy
+
   has_many   :reviews,
              :dependent => :destroy
 
