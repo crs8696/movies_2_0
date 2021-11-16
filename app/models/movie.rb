@@ -2,17 +2,17 @@ class Movie < ApplicationRecord
   # Direct associations
 
   belongs_to :cast_of_actors,
-             :class_name => "Actor",
-             :foreign_key => "cast"
+             class_name: "Actor",
+             foreign_key: "cast"
 
   belongs_to :director
 
   has_many   :bookmarks,
-             :foreign_key => "user_bookmarks",
-             :dependent => :destroy
+             foreign_key: "user_bookmarks",
+             dependent: :destroy
 
   has_many   :reviews,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
@@ -23,5 +23,4 @@ class Movie < ApplicationRecord
   def to_s
     title
   end
-
 end

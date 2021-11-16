@@ -1,24 +1,18 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Bookmark, type: :model do
-  
-    describe "Direct Associations" do
-
+  describe "Direct Associations" do
     it { should belong_to(:user_bookmark) }
 
     it { should belong_to(:bookmarker) }
+  end
 
-    end
-
-    describe "InDirect Associations" do
-
+  describe "InDirect Associations" do
     it { should have_one(:director) }
 
     it { should have_one(:cast_of_actor) }
+  end
 
-    end
-
-    describe "Validations" do
-
-    end
+  describe "Validations" do
+  end
 end

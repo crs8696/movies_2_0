@@ -29,5 +29,4 @@ class ActorResource < ApplicationResource
       end
     end
   end
-
 end

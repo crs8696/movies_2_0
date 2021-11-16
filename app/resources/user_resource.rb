@@ -15,5 +15,4 @@ class UserResource < ApplicationResource
              foreign_key: :user_bookmarks
 
   # Indirect associations
-
 end

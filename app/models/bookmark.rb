@@ -2,22 +2,22 @@ class Bookmark < ApplicationRecord
   # Direct associations
 
   belongs_to :user_bookmark,
-             :class_name => "User",
-             :foreign_key => "user_bookmarks"
+             class_name: "User",
+             foreign_key: "user_bookmarks"
 
   belongs_to :bookmarker,
-             :class_name => "Movie",
-             :foreign_key => "user_bookmarks"
+             class_name: "Movie",
+             foreign_key: "user_bookmarks"
 
   # Indirect associations
 
   has_one    :director,
-             :through => :bookmarker,
-             :source => :director
+             through: :bookmarker,
+             source: :director
 
   has_one    :cast_of_actor,
-             :through => :bookmarker,
-             :source => :cast_of_actors
+             through: :bookmarker,
+             source: :cast_of_actors
 
   # Validations
 
@@ -26,5 +26,4 @@ class Bookmark < ApplicationRecord
   def to_s
     bookmarker.to_s
   end
-
 end

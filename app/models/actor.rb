@@ -4,18 +4,18 @@ class Actor < ApplicationRecord
   # Direct associations
 
   has_many   :movies,
-             :foreign_key => "cast",
-             :dependent => :destroy
+             foreign_key: "cast",
+             dependent: :destroy
 
   # Indirect associations
 
   has_many   :bookmarks,
-             :through => :movies,
-             :source => :bookmarks
+             through: :movies,
+             source: :bookmarks
 
   has_many   :reviews,
-             :through => :movies,
-             :source => :reviews
+             through: :movies,
+             source: :reviews
 
   # Validations
 
@@ -24,5 +24,4 @@ class Actor < ApplicationRecord
   def to_s
     created_at
   end
-
 end

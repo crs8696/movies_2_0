@@ -24,5 +24,4 @@ class MovieResource < ApplicationResource
   has_many   :reviews
 
   # Indirect associations
-
 end

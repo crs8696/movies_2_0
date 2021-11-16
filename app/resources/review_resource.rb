@@ -25,13 +25,13 @@ class ReviewResource < ApplicationResource
 
   filter :cast, :integer do
     eq do |scope, value|
-      scope.eager_load(:cast_of_actor).where(:movies => {:cast => value})
+      scope.eager_load(:cast_of_actor).where(movies: { cast: value })
     end
   end
 
   filter :director_id, :integer do
     eq do |scope, value|
-      scope.eager_load(:director).where(:movies => {:director_id => value})
+      scope.eager_load(:director).where(movies: { director_id: value })
     end
   end
 end

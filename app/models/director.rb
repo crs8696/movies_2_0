@@ -4,17 +4,17 @@ class Director < ApplicationRecord
   # Direct associations
 
   has_many   :movies,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
   has_many   :bookmarks,
-             :through => :movies,
-             :source => :bookmarks
+             through: :movies,
+             source: :bookmarks
 
   has_many   :reviews,
-             :through => :movies,
-             :source => :reviews
+             through: :movies,
+             source: :reviews
 
   # Validations
 
@@ -23,5 +23,4 @@ class Director < ApplicationRecord
   def to_s
     date_of_birth
   end
-
 end
