@@ -10,6 +10,8 @@ RSpec.describe Director, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:bookmarks) }
+
     it { should have_many(:reviews) }
 
     end

@@ -6,6 +6,10 @@ class Director < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :bookmarks,
+             :through => :movies,
+             :source => :bookmarks
+
   has_many   :reviews,
              :through => :movies,
              :source => :reviews
