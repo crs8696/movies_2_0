@@ -4,7 +4,7 @@
 
   <!-- Label and input for user_bookmarks start -->
   <!-- Input for user_bookmarks start -->
-  <%= f.hidden_field :user_bookmarks, value: @user.id %>
+    <%= f.collection_select :user_bookmarks, Movie.all, :id, :to_s, {}, class: "form-control" %>
   <!-- Input for user_bookmarks end -->
   <!-- Label and input for user_bookmarks end -->
 

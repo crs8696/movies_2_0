@@ -16,7 +16,7 @@
 
     <%= f.label :user_bookmarks %>
     <!-- Input for user_bookmarks start -->
-    <%= f.number_field :user_bookmarks, class: user_bookmark_class, placeholder: "Enter user bookmark" %>
+    <%= f.collection_select :user_bookmarks, Movie.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for user_bookmarks end -->
     <% if user_bookmark_was_invalid %>
       <% bookmark.errors.full_messages_for(:user_bookmark).each do |message| %>
