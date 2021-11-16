@@ -14,4 +14,12 @@ class DirectorResource < ApplicationResource
 
   # Indirect associations
 
+  has_many :reviews do
+    assign_each do |director, reviews|
+      reviews.select do |r|
+        r.id.in?(director.reviews.map(&:id))
+      end
+    end
+  end
+
 end
