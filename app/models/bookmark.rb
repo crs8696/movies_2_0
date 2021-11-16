@@ -11,6 +11,10 @@ class Bookmark < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :cast_of_actor,
+             :through => :bookmarker,
+             :source => :cast_of_actors
+
   # Validations
 
   # Scopes
