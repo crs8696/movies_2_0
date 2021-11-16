@@ -11,6 +11,10 @@ class ReviewResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :reviewer,
+             resource: UserResource,
+             foreign_key: :review_content
+
   belongs_to :movie
 
   # Indirect associations
