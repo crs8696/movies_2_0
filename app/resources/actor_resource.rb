@@ -14,6 +14,14 @@ class ActorResource < ApplicationResource
 
   # Indirect associations
 
+  has_many :bookmarks do
+    assign_each do |actor, bookmarks|
+      bookmarks.select do |b|
+        b.id.in?(actor.bookmarks.map(&:id))
+      end
+    end
+  end
+
   has_many :reviews do
     assign_each do |actor, reviews|
       reviews.select do |r|
