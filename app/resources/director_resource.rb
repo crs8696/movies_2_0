@@ -14,6 +14,14 @@ class DirectorResource < ApplicationResource
 
   # Indirect associations
 
+  has_many :bookmarks do
+    assign_each do |director, bookmarks|
+      bookmarks.select do |b|
+        b.id.in?(director.bookmarks.map(&:id))
+      end
+    end
+  end
+
   has_many :reviews do
     assign_each do |director, reviews|
       reviews.select do |r|
