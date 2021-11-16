@@ -62,7 +62,7 @@
     <%= f.label :cast %>
 
     <!-- Input for cast start -->
-    <%= f.text_field :cast, class: "form-control" %>
+    <%= f.collection_select :cast, Actor.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for cast end -->
   </div>
   <!-- Label and input for cast end -->

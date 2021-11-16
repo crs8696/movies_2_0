@@ -172,7 +172,7 @@
 
     <%= f.label :cast %>
     <!-- Input for cast start -->
-    <%= f.number_field :cast, class: cast_class, placeholder: "Enter cast" %>
+    <%= f.collection_select :cast, Actor.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for cast end -->
     <% if cast_was_invalid %>
       <% movie.errors.full_messages_for(:cast).each do |message| %>
