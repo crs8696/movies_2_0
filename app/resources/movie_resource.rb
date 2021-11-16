@@ -12,6 +12,10 @@ class MovieResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :cast_of_actors,
+             resource: ActorResource,
+             foreign_key: :cast
+
   belongs_to :director
 
   has_many   :bookmarks,

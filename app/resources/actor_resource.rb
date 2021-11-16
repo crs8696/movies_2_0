@@ -9,6 +9,9 @@ class ActorResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :movies,
+             foreign_key: :cast
+
   # Indirect associations
 
 end
