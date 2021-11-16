@@ -19,4 +19,12 @@ class ReviewResource < ApplicationResource
 
   # Indirect associations
 
+  has_one    :cast_of_actor,
+             resource: ActorResource
+
+  filter :cast, :integer do
+    eq do |scope, value|
+      scope.eager_load(:cast_of_actor).where(:movies => {:cast => value})
+    end
+  end
 end

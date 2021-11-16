@@ -14,4 +14,12 @@ class ActorResource < ApplicationResource
 
   # Indirect associations
 
+  has_many :reviews do
+    assign_each do |actor, reviews|
+      reviews.select do |r|
+        r.id.in?(actor.reviews.map(&:id))
+      end
+    end
+  end
+
 end
